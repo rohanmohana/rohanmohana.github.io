@@ -6,7 +6,7 @@
     --fs-h4: 24px;
     --fs-h5: 16px;
     --fs-h6: 12px;
-    --fs-p: 20px;
+    --fs-p: 17px;
     --fs-small: 14px;
 
     /* Colors */
@@ -75,7 +75,7 @@
 
 @media (min-width:320px) and (max-width:599px) {
     :root {
-        --fs-p: 20px;
+        --fs-p: 18px;
         --fs-h1: 28px;
         --fs-h1: 26px;
         --fs-h3: 24px;
@@ -96,75 +96,18 @@
 }
 
 @font-face{
-    font-family: Balto-Light;
-    src: url(/assets/fonts/Balto/Balto-Light.eot) format('embedded-opentype'),
-        url(/assets/fonts/Balto/Balto-Light.woff2) format('woff2'),
-        url(/assets/fonts/Balto/Balto-Light.woff) format('woff'),
-        url(/assets/fonts/Balto/Balto-Light.ttf) format('embedded-opentype');
-        font-display: swap;
-}
-
-
-@font-face{
-    font-family: Balto-Book;
-    src: url(/assets/fonts/Balto/Balto-Book.eot) format('embedded-opentype'),
-        url(/assets/fonts/Balto/Balto-Book.woff2) format('woff2'),
-        url(/assets/fonts/Balto/Balto-Book.woff) format('woff'),
-        url(/assets/fonts/Balto/Balto-Book.ttf) format('embedded-opentype');
-        font-display: swap;
-}
-
-@font-face{
-    font-family: Balto-Bold;
-    src: url(/assets/fonts/Balto/Balto-Bold.eot) format('embedded-opentype'),
-        url(/assets/fonts/Balto/Balto-Bold.woff2) format('woff2'),
-        url(/assets/fonts/Balto/Balto-Bold.woff) format('woff'),
-        url(/assets/fonts/Balto/Balto-Bold.ttf) format('embedded-opentype');
-        font-display: swap;
-}
-
-@font-face{
-    font-family: Balto-Medium;
-    src: url(/assets/fonts/Balto/Balto-Medium.eot) format('embedded-opentype'),
-        url(/assets/fonts/Balto/Balto-Medium.woff2) format('woff2'),
-        url(/assets/fonts/Balto/Balto-Medium.woff) format('woff'),
-        url(/assets/fonts/Balto/Balto-Medium.ttf) format('embedded-opentype');
-        font-display: swap;
-}
-
-@font-face{
-    font-family: Balto-Black;
-    src: url(/assets/fonts/Balto/Balto-Black.eot) format('embedded-opentype'),
-        url(/assets/fonts/Balto/Balto-Black.woff2) format('woff2'),
-        url(/assets/fonts/Balto/Balto-Black.woff) format('woff'),
-        url(/assets/fonts/Balto/Balto-Black.ttf) format('embedded-opentype');
-        font-display: swap;
-}
-
-@font-face{
-    font-family: Balto-UltraItalic;
-    src: url(/assets/fonts/Balto/Balto-UltraItalic.eot) format('embedded-opentype'),
-        url(/assets/fonts/Balto/Balto-UltraItalic.woff2) format('woff2'),
-        url(/assets/fonts/Balto/Balto-UltraItalic.woff) format('woff'),
-        url(/assets/fonts/Balto/Balto-UltraItalic.ttf) format('embedded-opentype');
-        font-display: swap;
-}
-
-@font-face{
     font-family: Canela-Light;
         src: url(/assets/fonts/Canela/Canela-Thin.ttf) format('truetype');
         font-display: swap;
 }
 
-
-
 body, html {
-    font-family: Balto-Book, -apple-system, Helvetica, Roboto, san-serif;
+    font-family: 'Inter', -apple-system, Helvetica, Roboto, san-serif;
     font-size: var(--fs-p);
+    font-weight: 300;
     line-height: 1.618;
-    /* letter-spacing: -0.01em; */
     background-color: var(--body-bg);
-    /* color: var(--text-default); */
+    color: var(--text-default);
     /* For firefox: Hides the freaking ugly scrollbar incase a mouse is plugged in */
     overflow: -moz-scrollbars-none; 
     /* For windows: Hides the freaking ugly scrollbar incase a mouse is plugged in */
@@ -213,6 +156,12 @@ p.big {
     line-height: 48px;
 }
 
+li {
+    list-style: none;
+    font-size: 16px;
+    /* font-family: Menlo; */
+}
+
 small {
     font-size: var(--fs-small);
     letter-spacing: 0.03em;
@@ -248,7 +197,9 @@ span.highlight {
 }
 
 .serif {
-    font-family: 'Canela-Light', 'DM Serif Text', sans-serif;
+    font-family: 'Inter','Canela-Light', sans-serif;
+    font-weight: 300;
+    letter-spacing: -.02em;
 }
 
 .serif-italic {
@@ -266,28 +217,29 @@ a.icon-button {
     padding: 1rem;
 }
 
-.font-weight-ultra-italic {
-    font-family: Balto-UltraItalic;
-}
-
 .font-weight-black {
-    font-family: Balto-Black;
+    /* font-family: Balto-Black; */
+    font-weight: 900;
 }
 
 .font-weight-bold {
-    font-family: Balto-Bold;
+    /* font-family: Balto-Bold; */
+    font-weight: 700;
 }
 
 .font-weight-medium {
-    font-family: Balto-Medium;
+    /* font-family: Balto-Medium; */
+    font-weight: 500;
 }
 
 .font-weight-book {
-    font-family: Balto-Book;
+    /* font-family: Balto-Book; */
+    font-weight: 400;
 }
 
 .font-weight-light {
-    font-family: Balto-Light;
+    /* font-family: Balto-Light; */
+    font-weight: 300;
 }
 
 .text-right {
@@ -410,12 +362,18 @@ div.project-section > * {
 div.two-col {
     display: grid;
     grid-template-columns: var(--max-columns-project);
-    gap: var(--lg);
+    gap: var(--xl);
     grid-auto-flow: row;
+}
+
+.extend {
+    width: max-content;
+    float: right;
 }
 
 div.project-section img {
     width: 100%;
+    height: fit-content;
 }
 
 img {
